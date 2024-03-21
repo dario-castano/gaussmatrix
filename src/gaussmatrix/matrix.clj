@@ -6,6 +6,11 @@
   [coll]
   (cmx/matrix coll))
 
+(defn add-zeros-col 
+  "Add a column full of zeros" 
+  [matrix]
+  (map #(conj % 0) matrix))
+
 (defn square-matrix?
   "Checks if the matrix has the same height and width"
   [matrix]
