@@ -17,8 +17,3 @@
     
     ))
 
-(defn square-matrix?
-  "Checks if the matrix has the same height and width" 
-  [matrix]
-  (= (count matrix) (map count matrix)))
-
