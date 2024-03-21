@@ -11,4 +11,4 @@
                       [1 1 -3 -2]]
         matrix (mx/gen-matrix example-list)]
     
-    (mx/solve matrix)))
+    (println (mx/solve matrix))))
