@@ -22,7 +22,10 @@
   "Solve the matrix using Gaussian reduction"
   [matrix]
   (let [right-shape (correct-shape? matrix)
-        is-invertible (invertible? matrix)]
+        is-invertible (invertible? matrix)
+        cols (range (cmx/row-count matrix))
+        rows (range (cmx/row-count matrix))
+        ]
     (when-not right-shape (throw (RuntimeException. "Matrix must be square")))
     (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible")))
     ))
