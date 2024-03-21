@@ -21,32 +21,50 @@
 (defn make-pivot 
   "Make a row of a matrix a pivot turning the target position into a one" 
   [matrix index]
-  (let [factor (cmx/mget matrix index index)]
+  (let [factor (cmx/mget matrix index index)] 
     (cmx/multiply-row matrix index (/ 1 factor))))
 
 (defn make-reduction
   "Make a reduction subtracting the target row minus the product of the target
    element times the pivot row"
   [matrix row-index row-pivot]
-  (cmx/sub (cmx/get-row matrix row-index) 
-           (cmx/mul (cmx/get-row matrix row-pivot) (cmx/mget matrix row-index row-pivot))))
+  (let [result (cmx/sub 
+                (cmx/get-row matrix row-index) 
+                (cmx/mul 
+                 (cmx/get-row matrix row-pivot) 
+                 (cmx/mget matrix row-index row-pivot)))]
+    (cmx/set-row matrix row-index result)))
 
 (defn flip-row-signs
   "Flip the signs of all elements in a row"
   [matrix row]
   (cmx/multiply-row matrix row -1))
 
-(defn rec-gauss "" [matrix row-index ] ())
+(defn rec-gauss "" [matrix row-index cols] ())
 
 (defn run-gauss 
   "" 
   [matrix rows cols]
-  (if (or (empty? rows) (empty? cols)) 
+  (if (empty? rows)
     matrix 
-    ((let)
-     
-    )))
+    ((let [[head & tail] rows]
+       (when
+        (< (cmx/mget matrix head (first cols)) 1)
+         ((flip-row-signs matrix head)))
+       (make-pivot matrix head)
+       ))))
 
+(defn prepare-diagonal 
+  "" 
+  [matrix diagonal indexes]
+  (let [[dg-head & dg-tail] diagonal
+        [ix-head & ix-tail] indexes]
+    (if (not-any? zero? diagonal) 
+      matrix
+      (loop [dgs dg-tail
+             idx ix-tail] 
+        ()
+        ))))
 
 
 (defn solve
@@ -55,7 +73,9 @@
   (let [right-shape (correct-shape? matrix)
         is-invertible (invertible? matrix)
         cols (range (cmx/row-count matrix))
-        rows (range (cmx/row-count matrix))]
+        rows (range (cmx/row-count matrix))
+        diagonal (cmx/diagonal matrix)]
     (when-not right-shape (throw (RuntimeException. "Matrix must be square")))
-    (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible")))
-    (run-gauss matrix rows cols)))
+    (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible"))) 
+    (run-gauss 
+     (prepare-diagonal matrix diagonal rows) rows cols)))
