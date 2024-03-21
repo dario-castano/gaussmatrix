@@ -8,33 +8,22 @@
   [coll]
   (cmx/matrix coll))
 
-(defn add-zeros-col 
-  "Add a column full of zeros" 
-  [matrix]
-  (cmx/transpose 
-   (cmx/conjoin 
-    (cmx/transpose matrix) 
-    (cmx/zero-vector (cmx/row-count matrix))
-    )))
-
-(defn square-matrix?
+(defn correct-shape?
   "Checks if the matrix has the same height and width"
   [matrix]
-  (reduce = (cmx/shape matrix)))
+  (= (cmx/row-count matrix) (dec (cmx/column-count matrix))))
 
 (defn invertible? 
   "Checks if the matrix could be inverted" 
   [matrix]
-  (not= (cmx/det matrix) 0))
+  (not= (cmx/det (cmx/reshape matrix (repeat 2 (cmx/row-count matrix)))) 0))
 
 (defn solve 
   "Solve the matrix using Gaussian reduction"
   [matrix]
-  (let [is-square (square-matrix? matrix)
-        is-invertible (invertible? matrix)
-        augmented-matrix (add-zeros-col matrix)]
-    (when-not is-square (throw (RuntimeException. "Matrix must be square")))
+  (let [right-shape (correct-shape? matrix)
+        is-invertible (invertible? matrix)]
+    (when-not right-shape (throw (RuntimeException. "Matrix must be square")))
     (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible")))
-    augmented-matrix
     ))
 
