@@ -40,32 +40,32 @@
   [matrix row]
   (cmx/multiply-row matrix row -1))
 
-(defn rec-gauss "" [matrix row-index cols] ())
+(defn flip-pivot-row-signs
+  "Flip the sign or a pivot row" 
+  [matrix index]
+  (if (< (cmx/mget matrix index index) 1) 
+    (flip-row-signs matrix index)
+    matrix))
 
-(defn run-gauss 
+(defn set-zeros 
   "" 
+  [matrix index cols]
+  (if (empty? cols) 
+    matrix
+    (let [[head & tail] cols]
+      (recur (make-reduction matrix head index) index tail))))
+
+(defn run-gauss
+  "Runs the main algorithm of the Gauss elimination" 
   [matrix rows cols]
   (if (empty? rows)
     matrix 
-    ((let [[head & tail] rows]
-       (when
-        (< (cmx/mget matrix head (first cols)) 1)
-         ((flip-row-signs matrix head)))
-       (make-pivot matrix head)
-       ))))
-
-(defn prepare-diagonal 
-  "" 
-  [matrix diagonal indexes]
-  (let [[dg-head & dg-tail] diagonal
-        [ix-head & ix-tail] indexes]
-    (if (not-any? zero? diagonal) 
-      matrix
-      (loop [dgs dg-tail
-             idx ix-tail] 
-        ()
-        ))))
-
+    (let [[r_head & r_tail] rows
+          [c_head & c_tail] cols]
+      (recur (-> matrix 
+          (flip-pivot-row-signs r_head) 
+          (make-pivot r_head) 
+          (set-zeros c_head c_tail)) r_tail c_tail))))
 
 (defn solve
   "Solve the matrix using Gaussian reduction"
@@ -73,9 +73,7 @@
   (let [right-shape (correct-shape? matrix)
         is-invertible (invertible? matrix)
         cols (range (cmx/row-count matrix))
-        rows (range (cmx/row-count matrix))
-        diagonal (cmx/diagonal matrix)]
+        rows (range (cmx/row-count matrix))]
     (when-not right-shape (throw (RuntimeException. "Matrix must be square")))
     (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible"))) 
-    (run-gauss 
-     (prepare-diagonal matrix diagonal rows) rows cols)))
+    (run-gauss matrix rows cols)))
