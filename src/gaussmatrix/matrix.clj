@@ -76,4 +76,6 @@
         rows (range (cmx/row-count matrix))]
     (when-not right-shape (throw (RuntimeException. "Matrix must be square")))
     (when-not is-invertible (throw (RuntimeException. "Matrix must be invertible"))) 
-    (run-gauss matrix rows cols)))
+    (-> matrix
+        (run-gauss rows cols)
+        (run-gauss (reverse rows) (reverse cols)))))
