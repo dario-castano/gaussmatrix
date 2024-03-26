@@ -1,0 +1,73 @@
+% PLANTILLA APA7
+% Creado por: Isaac Palma Medina
+% Última actualización: 25/07/2021
+% @COPYLEFT
+
+% Fuentes consultadas (todos los derechos reservados):  
+% Normas APA. (2019). Guía Normas APA. https://normas-apa.org/wp-content/uploads/Guia-Normas-APA-7ma-edicion.pdf
+% Tecnológico de Costa Rica [Richmond]. (2020, 16 abril). LaTeX desde cero con Overleaf (1 de 3) [Vídeo]. YouTube. https://www.youtube.com/watch?v=kM1KvHVuaTY Weiss, D. (2021). 
+% Formatting documents in APA style (7th Edition) with the apa7 LATEX class. https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/apa7/apa7.pdf @COPYLEFT
+
+%+-+-+-+-++-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+
+
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Implementación del método de eliminación guassiana por el método del pivotaje parcial escalado}
+\author{Hernán Darío Castaño Rueda} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Fundación Universitaria Internacional de la Rioja}
+\course{Algebra y Matemática Discreta}
+\professor{Iván Darío Maldonado Pazmiño}
+\duedate{26/03/2024}
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{roman}
+    % Contenido
+\renewcommand\contentsname{\largeÍndice}
+\tableofcontents
+\setcounter{tocdepth}{2}
+\newpage
+    % Fíguras
+%\renewcommand{\listfigurename}{\largeÍndice de fíguras}
+%\listoffigures
+%\newpage
+    % Tablas
+%\renewcommand{\listtablename}{\largeÍndice de tablas}
+%\listoftables
+%\newpage
+
+% Cuerpo
+\pagenumbering{arabic}
+
+\section{\large Introducción}
+Voy a citar a \cite{black1973poa} como sea \url{https://leiningen.org/}
+\section{\large Detalles de la implementación}
+\section{\large Pruebas de la implementación}
+\section{\large Conclusiones}
+
+
+
+\newpage
+% Referencias
+\renewcommand\refname{\large\textbf{Referencias}}
+\bibliography{biblio}
+
+\end{document}

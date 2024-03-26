@@ -1,0 +1,31 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Black%
+\ \BBA {} Scholes%
+}{%
+Black%
+\ \BBA {} Scholes%
+}{%
+{\protect \APACyear {1973}}%
+}]{%
+black1973poa}
+\APACinsertmetastar {%
+black1973poa}%
+\begin{APACrefauthors}%
+Black, F.%
+\BCBT {}\ \BBA {} Scholes, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1973}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The pricing of options and corporate liabilities} {The
+  pricing of options and corporate liabilities}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Political Economy}{81}{3}{637--654}.
+\newblock
+\begin{APACrefDOI} \doi{10.1086/260062} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

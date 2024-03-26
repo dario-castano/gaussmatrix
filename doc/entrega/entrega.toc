@@ -1,0 +1,7 @@
+\babel@toc {spanish}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\large Introducción}{1}{section*.2}%
+\contentsline {section}{\large Detalles de la implementación}{1}{section*.3}%
+\contentsline {section}{\large Pruebas de la implementación}{1}{section*.4}%
+\contentsline {section}{\large Conclusiones}{1}{section*.5}%
+\contentsline {section}{\large \textbf {Referencias}}{2}{section*.6}%
