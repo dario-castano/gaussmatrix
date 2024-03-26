@@ -9,6 +9,8 @@
                       [2 -1 2 3 7] 
                       [-1 3 3 -2 17] 
                       [3 -2 1 1 -2]]
-        matrix (mx/gen-matrix example-list)]
+        matrix (mx/gen-matrix example-list)
+        solved-matrix (mx/solve matrix)]
     
-    (println (mx/solve matrix))))
+    (println solved-matrix)
+    (mx/gen-matrix solved-matrix)))
