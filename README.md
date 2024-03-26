@@ -1,36 +1,31 @@
 # gaussmatrix
 
-FIXME: description
+Este programa ejecuta una reducción gaussiana de una matrix de 4x4 a través del metodo de Gauss Jordan
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Para que este ejercicio funcione se requiere la instalación de Clojure y Leiningen. Para estos, también es necesaria la instalación de Java 17
+
+para la instalación de Clojure:
+https://clojure.org/guides/install_clojure
+
+para instalar Leiningen:
+https://leiningen.org/
 
 ## Usage
 
-FIXME: explanation
+Se accede a la carpeta del proyecto (gaussmatrix) y se ejecuta el siguiente comando:
 
-    $ java -jar gaussmatrix-0.1.0-standalone.jar [args]
+``` lein run ```
 
-## Options
+para las pruebas unitarias se ejecuta el siguiente comando:
 
-FIXME: listing of options this app accepts.
+``` lein test ```
 
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
 
 ## License
 
-Copyright © 2024 FIXME
+Copyright © 2024 Hernan Dario Castaño Rueda
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
