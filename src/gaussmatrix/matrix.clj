@@ -41,14 +41,14 @@
   (cmx/multiply-row matrix row -1))
 
 (defn flip-pivot-row-signs
-  "Flip the sign or a pivot row" 
+  "Flip the sign of a pivot row" 
   [matrix index]
   (if (< (cmx/mget matrix index index) 1) 
     (flip-row-signs matrix index)
     matrix))
 
 (defn set-zeros 
-  "" 
+  "Set zeros on all elements of the row around the pivot element" 
   [matrix index cols]
   (if (empty? cols) 
     matrix
