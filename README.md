@@ -23,6 +23,10 @@ para las pruebas unitarias se ejecuta el siguiente comando:
 ``` lein test ```
 
 
+## Key Files
+
+Para mirar los archivos que ejecutan la lógica, verificar en la carpeta src/gaussmatrix los archivos core.clj (main) y matrix.clj (tiene la lógica de resolución de la matriz)
+
 ## License
 
 Copyright © 2024 Hernan Dario Castaño Rueda
