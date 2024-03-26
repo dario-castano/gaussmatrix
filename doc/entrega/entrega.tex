@@ -58,10 +58,39 @@
 \pagenumbering{arabic}
 
 \section{\large Introducción}
-Voy a citar a \cite{black1973poa} como sea \url{https://leiningen.org/}
+El presente trabajo trata acerca de la implementación de un algoritmo de eliminación gaussiana en un lenguaje de programación seleccionado por el estudiante.
+
+En este documento se da una descripción general del proceso de implementación, instrucciones para la revisión del código por parte del docente, una descripción acerca de las pruebas ejecutadas sobre la implementación, y por ultimo, unas conclusiones sobre el trabajo, las cuales se efectúan a manera de retroalimentación para el docente.
+
 \section{\large Detalles de la implementación}
+\subsection{Proceso de eliminación gaussiana}
+La eliminación gaussiana es un método de reducir una matriz aumentada a una matriz escalonada a través de la ejecución de unas operaciones elementales sobre las filas. El objetivo de este proceso es la resolución de sistemas de ecuaciones lineales de la forma $Ax = b$ donde $A$ es una matriz de coeficientes, $x$ un vector de parámetros y $b$ el vector de términos independientes del sistema.
+
+La solución de este sistema se puede efectuar a través de diferentes estrategias, pero entre las estrategias de nuestro interés se encuentra la eliminación gaussiana. Hay dos alternativas que son el metodo de Gauss con sustitución hacia atrás, y el método de Gauss-Jordan el cual ha sido seleccionado para efectuar la implementación.
+
+\subsection{Lenguaje de programación seleccionado}
+Se ha seleccionado como lenguaje de programación a Clojure \footnote{\url{https://clojure.org/}}, debido a que es un lenguaje que da otro punto de vista sobre la solución de dicho problema desde un paradigma funcional, y posee una sintaxis elegante y concisa, la cual permite en gran medida un código autodocumentado. 
+
+\subsubsection{Instalación del programa}
+Se debe clonar el proyecto del siguiente repositorio de GitHub: \url{https://github.com/dario-castano/gaussmatrix}
+
+El proceso de instalación y ejecución del proyecto se encuentra en el archivo README.md que pertenece al proyecto
+\subsection{Descripción del proceso implementado}
+El proceso implementado se reduce básicamente a los siguientes pasos:
+
+\begin{enumerate}
+\item Chequeos iniciales como verificar que la matriz tenga la forma correcta y sea invertible.
+\item  Ejecutar una recursión sobre las filas y otra sobre las columnas con el siguiente proceso: invertir los signos en caso de un pivote negativo, generar un uno (1) dividiendo la fila pivote por el elemento a convertir en pivote, y efectuar una reducción contra las filas posteriores para generar ceros.
+\item  Se ejecuta el mismo proceso pero en reversa para terminar de convertir al sistema Ax en una matriz identidad.
+\end{enumerate}
+
+
+
 \section{\large Pruebas de la implementación}
+Las pruebas  de la implementación están en la carpeta test del proyecto, dichas pruebas unitarias se pueden correr a través de leiningen con el comando que se encuentra descrito en el README del proyecto. 
+
 \section{\large Conclusiones}
+A nivel de aprendizaje por parte del alumno, se encuentra que la actividad fue considerablemente satisfactoria debido a la libertad para seleccionar el lenguaje en el que se efectuaba la implementación, debido a que esto es una muestra de las capacidades de diferentes lenguajes de resolver un mismo problema desde diferentes enfoques y paradigmas de programación. Asimismo, esta libertad genera en el desarrollador un sentimiento de satisfacción de poder dejar su toque personal en dicha implementación, en una profesión en la que usualmente las decisiones de selección de los lenguajes no están siempre al alcance del desarrollador.
 
 
 

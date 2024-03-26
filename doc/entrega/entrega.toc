@@ -2,6 +2,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\large Introducción}{1}{section*.2}%
 \contentsline {section}{\large Detalles de la implementación}{1}{section*.3}%
-\contentsline {section}{\large Pruebas de la implementación}{1}{section*.4}%
-\contentsline {section}{\large Conclusiones}{1}{section*.5}%
-\contentsline {section}{\large \textbf {Referencias}}{2}{section*.6}%
+\contentsline {subsection}{Proceso de eliminación gaussiana}{1}{section*.4}%
+\contentsline {subsection}{Lenguaje de programación seleccionado}{1}{section*.5}%
+\contentsline {subsubsection}{Instalación del programa}{2}{section*.6}%
+\contentsline {subsection}{Descripción del proceso implementado}{2}{section*.7}%
+\contentsline {section}{\large Pruebas de la implementación}{2}{section*.8}%
+\contentsline {section}{\large Conclusiones}{2}{section*.9}%
+\contentsline {section}{\large \textbf {Referencias}}{4}{section*.10}%

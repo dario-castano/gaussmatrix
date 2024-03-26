@@ -2,6 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: entrega.aux
 The style file: apacite.bst
+I found no \citation commands---while reading file entrega.aux
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -13,44 +14,45 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblio.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 1 entry,
+You've used 0 entries,
             6951 wiz_defined-function locations,
-            1277 strings with 10807 characters,
-and the built_in function-call counts, 1661 in all, are:
-= -- 198
-> -- 14
-< -- 64
-+ -- 64
-- -- 2
-* -- 108
-:= -- 314
-add.period$ -- 4
-call.type$ -- 1
-change.case$ -- 17
+            1268 strings with 10646 characters,
+and the built_in function-call counts, 43 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 1
+:= -- 32
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 43
-empty$ -- 74
-format.name$ -- 24
-if$ -- 319
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 30
-num.names$ -- 8
-pop$ -- 23
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 0
 quote$ -- 0
-skip$ -- 117
+skip$ -- 1
 stack$ -- 0
-substring$ -- 71
-swap$ -- 31
-text.length$ -- 2
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 80
+type$ -- 0
 warning$ -- 0
-while$ -- 7
+while$ -- 0
 width$ -- 0
-write$ -- 35
+write$ -- 2
+(There was 1 error message)
